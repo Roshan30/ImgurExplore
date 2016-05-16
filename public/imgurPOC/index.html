@@ -16,24 +16,46 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             (function(w){
-                  var albumID = 'nCYZ8';
-                        var albumAPI = "https://api.imgur.com/3/account/roshanjoshi/albums";
+                
+                //https://api.imgur.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=REQUESTED_RESPONSE_TYPE&state=APPLICATION_STATE
+                
+               // window.open("http://www.google.com/", "Google", "width=500,height=500");
+                //   var albumID = 'nCYZ8';
+                //         var albumAPI = "https://api.imgur.com/3/account/roshanjoshi/albums";
 
-                        $.ajax({
-                            url: albumAPI,
-                            headers:{
-                                'Authorization':'Client-ID 9d0b83c04a66cf8'
-                            },
-                            type: 'GET',
-                            dataType: 'json',
-                            success: function(data) { 
+                //         $.ajax({
+                //             url: albumAPI,
+                //             headers:{
+                //                 'Authorization':'Client-ID 9d0b83c04a66cf8'
+                //             },
+                //             type: 'GET',
+                //             dataType: 'json',
+                //             success: function(data) { 
 
-                                console.log(data);
+                //                 console.log(data);
 
-                            },
-                            error: function() { console.log("ERRORZ"); }
-                        });
+                //             },
+                //             error: function() { console.log("ERRORZ"); }
+                //         });
+//  function PrintItem() {
+         
+//            window.showModalDialog('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
+//        }
+        function parent(){
+            console.log('dasdad');
+        }
+     var PrintItem =function(){
+         
+    // var windowref = window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
+    var myWindow =window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
 
+// Write some text in the new window
+myWindow.document.write("<p>This is 'myWindow'</p>");     
+
+// Write some text in the window that created the new window            
+console.log(myWindow.opener); 
+     }
+     PrintItem();
               })(window)
             //   http://imgur.com/rjvK72Z
             //   "type='base64'&image=" & URLEncode(RegexReplace(CanvasSnapshot, "data:image/png;base64,", "", ""))
