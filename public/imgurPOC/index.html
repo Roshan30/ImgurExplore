@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="playWithImageApp">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+        <!--<link href="css/app.css" rel="stylesheet" />-->
+    </head>
+    <body>
+        <div class="container formPage">
+            <div ng-controller="iamgeCtrl">
+                fdsfdsfdsf
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            (function(w){
+                  var albumID = 'nCYZ8';
+                        var albumAPI = "https://api.imgur.com/3/account/roshanjoshi/albums";
+
+                        $.ajax({
+                            url: albumAPI,
+                            headers:{
+                                'Authorization':'Client-ID 9d0b83c04a66cf8'
+                            },
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(data) { 
+
+                                console.log(data);
+
+                            },
+                            error: function() { console.log("ERRORZ"); }
+                        });
+
+              })(window)
+            //   http://imgur.com/rjvK72Z
+            //   "type='base64'&image=" & URLEncode(RegexReplace(CanvasSnapshot, "data:image/png;base64,", "", ""))
+        </script>
+    </body>
+</html>
+<!--<blockquote class="imgur-embed-pub" lang="en" data-id="a/nCYZ8"><a href="//imgur.com/a/nCYZ8">My first album</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>-->
