@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    loadView('https://roshanjoshi.in/imgurPOC/login.html');
     function loadView(url)
     {
         $.ajax({
@@ -10,4 +9,5 @@ $(document).ready(function () {
             }
         })
     }
+    loadView('login.html');
 });
