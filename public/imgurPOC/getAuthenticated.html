@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authenticate</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var url = window.location.href;
+        alert(url);
+        if (window.opener) {
+            window.opener.imgurLocation = url;
+        }
+        else {
+            window.parent.imgurLocation = url;
+        }
+    </script>
+</body>
+</html>
