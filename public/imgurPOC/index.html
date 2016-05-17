@@ -1,65 +1,37 @@
 <!doctype html>
 <html lang="en" ng-app="playWithImageApp">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-        <!--<link href="css/app.css" rel="stylesheet" />-->
-    </head>
-    <body>
-        <div class="container formPage">
-            <div ng-controller="iamgeCtrl">
-                fdsfdsfdsf
-            </div>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="css/app.css" rel="stylesheet" />-->
+</head>
+
+<body>
+    <div class="container formPage">
+        <div ng-controller="iamgeCtrl">
+            fdsfdsfdsf
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            (function(w){
-                
-                //https://api.imgur.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=REQUESTED_RESPONSE_TYPE&state=APPLICATION_STATE
-                
-               // window.open("http://www.google.com/", "Google", "width=500,height=500");
-                //   var albumID = 'nCYZ8';
-                //         var albumAPI = "https://api.imgur.com/3/account/roshanjoshi/albums";
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        (function(w){
+            w.onbeforeunload = function () {
+                var url = 'url: ' + w.location.href;
+                alert(url);
+                if (window.opener) {
+                    window.opener.imgurLocation = url;
+                }
+                else {
+                    window.parent.imgurLocation = url;
+                }
+                console.log(url);
+            };
+        })(window);
+    </script>
+</body>
 
-                //         $.ajax({
-                //             url: albumAPI,
-                //             headers:{
-                //                 'Authorization':'Client-ID 9d0b83c04a66cf8'
-                //             },
-                //             type: 'GET',
-                //             dataType: 'json',
-                //             success: function(data) { 
-
-                //                 console.log(data);
-
-                //             },
-                //             error: function() { console.log("ERRORZ"); }
-                //         });
-//  function PrintItem() {
-         
-//            window.showModalDialog('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
-//        }
-        function parent(){
-            console.log('dasdad');
-        }
-     var PrintItem =function(){
-         
-    // var windowref = window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
-    var myWindow =window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
-
-// Write some text in the new window
-myWindow.document.write("<p>This is 'myWindow'</p>");     
-
-// Write some text in the window that created the new window            
-console.log(myWindow.opener); 
-     }
-     PrintItem();
-              })(window)
-            //   http://imgur.com/rjvK72Z
-            //   "type='base64'&image=" & URLEncode(RegexReplace(CanvasSnapshot, "data:image/png;base64,", "", ""))
-        </script>
-    </body>
 </html>
 <!--<blockquote class="imgur-embed-pub" lang="en" data-id="a/nCYZ8"><a href="//imgur.com/a/nCYZ8">My first album</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>-->

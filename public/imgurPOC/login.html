@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Window</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        (function(w){
+            
+            var myWindow = window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
+
+            myWindow.onunload = function () {
+                console.log(w.imgurLocation);                
+            };
+        }(window));
+    </script>
+</body>
+
+</html>
