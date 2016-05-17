@@ -1,5 +1,9 @@
 $(document).ready(function () {
-    function loadView(url)
+  
+    loadView('login.html');
+});
+
+  function loadView(url)
     {
         $.ajax({
             url: url,
@@ -9,5 +13,3 @@ $(document).ready(function () {
             }
         })
     }
-    loadView('login.html');
-});

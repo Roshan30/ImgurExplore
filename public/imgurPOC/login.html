@@ -24,9 +24,10 @@ Login
         var myWindow = window.open('https://api.imgur.com/oauth2/authorize?client_id=418aaed0e0e413b&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
 
         myWindow.onunload = function () {
-            alert(window.imgurLocation);
+            alert(window.imgurLocation);    
             logInComp.createObj(window.imgurLocation);
-            window.loadView('albums.html');
+            loadView('albums.html');
+            console.log('loadView');
         };
             
         function nth_ocurrence(str, needle, nth) {
