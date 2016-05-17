@@ -7,28 +7,29 @@
 </head>
 
 <body>
-
+Login
     <script type="text/javascript">
-    window.callBackUrlObj = {};
-    var logInClass = function(){
-            this.callBackUrlObj={};
-    }
-    logInClass.prototype.createObj = function(_objStr){
-        
-           this.callBackUrlObj.access_token = _objStr.slice(nth_ocurrence(_objStr,'=',1)+1,nth_ocurrence(_objStr, '&', 1));
+        window.callBackUrlObj = {};
+        var logInClass = function(){
+                this.callBackUrlObj={};
+        }
+        logInClass.prototype.createObj = function(_objStr){
+            
+            this.callBackUrlObj.access_token = _objStr.slice(nth_ocurrence(_objStr,'=',1)+1,nth_ocurrence(_objStr, '&', 1));
             this.callBackUrlObj.account_username = _objStr.slice(nth_ocurrence(_objStr,'=',2)+1,nth_ocurrence(_objStr, '&', 2));
             this.callBackUrlObj.account_id = _objStr.slice(nth_ocurrence(_objStr,'=',3)+1,_objStr.length);
             return this.callBackUrlObj;
-    }
-    var logInComp = new logInClass();
-        var myWindow = window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
+        }
+        var logInComp = new logInClass();
+        var myWindow = window.open('https://api.imgur.com/oauth2/authorize?client_id=418aaed0e0e413b&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
 
         myWindow.onunload = function () {
+            alert(window.imgurLocation);
             logInComp.createObj(window.imgurLocation);
-            loadView('albums.html');
+            window.loadView('albums.html');
         };
-        
-      function nth_ocurrence(str, needle, nth) {
+            
+        function nth_ocurrence(str, needle, nth) {
                 for (i=0;i<str.length;i++) {
                     if (str.charAt(i) == needle) {
                         if (!--nth) {
