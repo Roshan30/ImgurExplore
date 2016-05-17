@@ -9,10 +9,19 @@
 <body>
 
     <script type="text/javascript">
+    window.callBackUrlObj = {};
+    var logInClass = function(){
+            this.callBackUrlObj={};
+    }
+    logInClass.prototype.createObj = function(_obj){
+           console.log(_obj); 
+    }
+    var logInComp = new LogInClass();
         var myWindow = window.open('https://api.imgur.com/oauth2/authorize?client_id=96f754e633a64c2&response_type=token', self, 'dialogWidth:800px;dialogHeight:530px;status:no;dialogHide:yes;unadorned:no;');
 
         myWindow.onunload = function () {
-            console.log(window.imgurLocation);                
+           // console.log(window.imgurLocation);
+            logInComp.createObj(window.imgurLocation);
         };
     </script>
 </body>
