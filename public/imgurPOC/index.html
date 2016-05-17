@@ -17,19 +17,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        (function(w){
-            w.onbeforeunload = function () {
-                var url = 'url: ' + w.location.href;
-                alert(url);
-                if (window.opener) {
-                    window.opener.imgurLocation = url;
-                }
-                else {
-                    window.parent.imgurLocation = url;
-                }
-                console.log(url);
-            };
-        })(window);
+                    var url = 'url: ' + window.location.href;
+                    alert(url);
+                    if (window.opener) {
+                        window.opener.imgurLocation = url;
+                    }
+                    else {
+                        window.parent.imgurLocation = url;
+                    }
+                    console.log(url);
+            
     </script>
 </body>
 
